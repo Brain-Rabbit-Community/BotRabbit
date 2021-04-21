@@ -12,7 +12,7 @@ export default class ReactionHandler {
         if (!guildMember?.roles.cache.get(beginnersRoleId)) {
           guildMember?.roles.add(beginnersRoleId);
           const welcomeChannel = reaction.message.guild?.channels.cache.get(welcomeGuildId);
-          (welcomeChannel as TextChannel).send(`Olá ${user.username}:hand_splayed:, bem vindo(a) ao Deno Brazil, antes de começar leia algumas informações base em #:no_entry_sign:regras e acompanhe sempre as #:mega:novidades .`);
+          (welcomeChannel as TextChannel).send(`Olá ${user.username}:hand_splayed:, bem vindo(a) a comunidade Brain Rabbit, antes de começar leia algumas informações base em #:no_entry_sign:regras e acompanhe sempre as #:mega:novidades .`);
         }
       }
     } catch (Err) {
