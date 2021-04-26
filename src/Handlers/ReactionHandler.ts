@@ -1,7 +1,15 @@
 import {
-  MessageReaction, User, PartialUser, Channel, TextChannel,
+  MessageReaction,
+  User,
+  PartialUser,
+  TextChannel,
 } from 'discord.js';
-import { beginnersRoleId, rulesMsgId, welcomeGuildId } from '../configs/config';
+
+import {
+  beginnersRoleId,
+  rulesMsgId,
+  welcomeGuildId,
+} from '../configs/config';
 
 export default class ReactionHandler {
   public static async handle(reaction: MessageReaction, user: User | PartialUser) : Promise<void> {
@@ -12,7 +20,7 @@ export default class ReactionHandler {
         if (!guildMember?.roles.cache.get(beginnersRoleId)) {
           guildMember?.roles.add(beginnersRoleId);
           const welcomeChannel = reaction.message.guild?.channels.cache.get(welcomeGuildId);
-          (welcomeChannel as TextChannel).send(`Olá ${user.username}:hand_splayed:, bem vindo(a) a comunidade Brain Rabbit, antes de começar leia algumas informações base em #:no_entry_sign:regras e acompanhe sempre as #:mega:novidades .`);
+          (welcomeChannel as TextChannel).send(`Olá ${user.username}:hand_splayed:. Bem vindo(a) à comunidade Brain Rabbit. Antes de começar, leia algumas informações base em #:no_entry_sign:regras e acompanhe sempre as #:mega:novidades .`);
         }
       }
     } catch (Err) {
